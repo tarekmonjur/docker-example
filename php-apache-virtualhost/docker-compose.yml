@@ -1,0 +1,13 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: php-apache-vhost
+    ports:
+      - 8000:80
+    volumes:
+      - ./code:/app/public
+    environment:
+      DB_HOST: mysql
