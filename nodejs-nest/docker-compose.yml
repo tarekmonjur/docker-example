@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  nest:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    working_dir: /app
+    ports:
+      - 8088:8080
+    command: "/bin/bash run.sh"
+    environment:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0
+      NO_SSL_MODE: 1
