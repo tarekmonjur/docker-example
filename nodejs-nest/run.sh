@@ -5,4 +5,4 @@ mv nest-test/* /app
 rm -r nest-test
 echo "Starting Service"
 npm install
-npm start
+npm run start:dev

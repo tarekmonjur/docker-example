@@ -6,11 +6,13 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./:/app
+      - "./:/app"
     working_dir: /app
     ports:
-      - 8088:8080
+      - 8083:8083
+      - 8084:8080
     command: "/bin/bash run.sh"
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
       NO_SSL_MODE: 1
+      ENV_PORT: 8083
